@@ -75,6 +75,8 @@ function! sl#animate()
   let l:x = 0
   new
   only!
+  let l:wrap_backup = &l:wrap
+  setlocal nowrap
   redraw
   while 1
     silent %d _
@@ -92,5 +94,6 @@ function! sl#animate()
       break
     endif
   endwhile
+  let &l:wrap = l:wrap_backup
   bw!
 endfunction
