@@ -78,8 +78,11 @@ function! sl#animate()
   let l:wrap_backup = &l:wrap
   setlocal nowrap
   redraw
+  let filepath = expand("%:p:h") . "/sl.wav"
+  echomsg filepath
+  call sound_playfile(filepath)
   while 1
-    silent %d _
+        silent %d _
     let l:item = []
     for l:part in l:data
       for l:lines in l:part[l:x % len(l:part)]
