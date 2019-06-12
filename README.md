@@ -24,3 +24,7 @@ MIT
 ## Author
 
 Yasuhiro Matsumoto (a.k.a. mattn)
+
+## Sound
+
+aonrjp
