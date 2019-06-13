@@ -79,7 +79,8 @@ function! sl#animate()
   setlocal nowrap
   redraw
   if exists('*sound_playfile')
-    let l:filepath = expand('<sfile>:h:h') . '/sl.wav'
+    let l:filepath = expand('<sfile>:h:h') . '/../sl.wav'
+    echomsg l:filepath
     call sound_playfile(filepath)
   endif
   while 1
