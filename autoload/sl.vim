@@ -81,6 +81,7 @@ function! sl#animate()
   if exists('*sound_playfile')
     let l:filepath = expand('**/sl.wav')
     call sound_playfile(filepath)
+  endif
   while 1
     silent %d _
     let l:item = []
