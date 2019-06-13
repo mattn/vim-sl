@@ -63,7 +63,6 @@ let s:data = [
 \]
 
 function! sl#animate()
-  let filepath = expand('**/sl.wav')
   let l:x = &columns
   let l:data = deepcopy(s:data)
   for l:part in l:data
@@ -79,7 +78,9 @@ function! sl#animate()
   let l:wrap_backup = &l:wrap
   setlocal nowrap
   redraw
-  call sound_playfile(filepath)
+  if exists('*sound_playfile')
+    let l:filepath = expand('**/sl.wav')
+    call sound_playfile(filepath)
   while 1
     silent %d _
     let l:item = []
