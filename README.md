@@ -25,8 +25,8 @@ MIT
 
 Yasuhiro Matsumoto (a.k.a. mattn)
 
-## Sound
+## Thanks
 
-aonrjp
+sl.wav : https://aonr.jp/
 
 > http://aonr.jp/pub/sl.wav
