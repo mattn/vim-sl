@@ -62,7 +62,7 @@ let s:data = [
 \  ]
 \]
 
-function! sl#animate()
+function! sl#animate() abort
   let l:x = &columns
   let l:data = deepcopy(s:data)
   for l:part in l:data
