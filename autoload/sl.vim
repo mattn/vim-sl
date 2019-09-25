@@ -1,3 +1,4 @@
+let s:filepath = expand('<sfile>:h:h') . '/sl.wav'
 let s:data = [
 \  [
 \    [
@@ -79,8 +80,7 @@ function! sl#animate() abort
   setlocal nowrap
   redraw
   if exists('*sound_playfile')
-    let l:filepath = expand('<sfile>:h:h') . '/sl.wav'
-    call sound_playfile(l:filepath)
+    call sound_playfile(s:filepath)
   endif
   while 1
     silent %d _
