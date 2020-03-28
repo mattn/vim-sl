@@ -77,7 +77,9 @@ function! sl#animate() abort
   new
   only!
   let l:wrap_backup = &l:wrap
+  let l:listchars_backup = &listchars
   setlocal nowrap
+  set listchars=
   redraw
   if exists('*sound_playfile')
     call sound_playfile(s:filepath)
@@ -87,7 +89,7 @@ function! sl#animate() abort
     let l:item = []
     for l:part in l:data
       for l:lines in l:part[l:x % len(l:part)]
-        call add(l:item, l:lines[l:x :]) 
+        call add(l:item, l:lines[l:x :])
       endfor
     endfor
     call setline(1,  l:item)
@@ -99,5 +101,6 @@ function! sl#animate() abort
     endif
   endwhile
   let &l:wrap = l:wrap_backup
+  let &listchars = l:listchars_backup
   bw!
 endfunction
